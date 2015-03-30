@@ -1,0 +1,176 @@
+declare class Decimal {
+ 
+  constructor(value: any, base?: number);
+  constructor(value: Decimal);
+
+  public static exp(value: number): Decimal;
+
+  public static ln(value: any): Decimal;
+
+  public static log(value: any, base?: any): Decimal;
+
+  public static max(...values: any[]): Decimal;
+  public static min(...values: any[]): Decimal;
+
+  public static noConflict(): Function;
+
+  public static pow(base: any, exponent: any): Decimal;
+  public pow(exponent: any): Decimal;
+
+  public static random(precision?: number): Decimal;
+  public static random(precision: IDecimalConfig): Decimal;
+
+  public static sqrt(value: any): Decimal;
+
+  public static ONE: Decimal;
+  public static precision: number;
+  public static rounding: number;
+  public static minE: number;
+  public static maxE: number;
+  public static toExpNeg: number;
+  public static toExpPos: number;
+  public static errors: boolean;
+  public static modulo: number;
+
+  public static ROUND_UP: number;
+  public static ROUND_DOWN: number;
+  public static ROUND_CEIL: number;
+  public static ROUND_FLOOR: number;
+  public static ROUND_HALF_UP: number;
+  public static ROUND_HALF_DOWN: number;
+  public static ROUND_HALF_EVEN: number;
+  public static ROUND_HALF_CEIL: number;
+  public static ROUND_HALF_FLOOR: number;
+  public static EUCLID: number;
+
+  public static crypto: boolean;
+  public static format: IDecimalFormat;
+
+  public absoluteValue(): Decimal;
+  public abs(): Decimal;
+
+  public ceil(): Decimal;
+
+  public comparedTo(value: any, base?: number): number;
+  public cmp(value: any, base?: number): number;
+
+  public decimalPlaces(): number;
+  public dp(): number;
+
+  public dividedBy(value: any, base?: number): Decimal;
+  public div(value: any, base?: number): Decimal;
+
+  public dividedToIntegerBy(value: any, base?: number): Decimal;
+  public divToInt(value: any, base?: number): Decimal;
+
+  public equals(value: any, base?: number): Decimal;
+  public eq(value: any, base?: number): Decimal;
+
+  public exponential(): Decimal;
+  public exp(): Decimal;
+
+  public floor(): Decimal;
+
+  public greaterThan(value: any, base?: number): Decimal;
+  public gt(value: any, base?: number): Decimal;
+
+  public greaterThanOrEqualTo(value: any, base?: number): Decimal;
+  public gte(value: any, base?: number): Decimal;
+
+  public isFinite(): boolean;
+  public isInteger(): boolean;
+  public isNaN(): boolean;
+  public isNegative(): boolean;
+  public isZero(): boolean;
+
+  public lessThan(value: any, base?: number): Decimal;
+  public lt(value: any, base?: number): Decimal;
+
+  public lessThanOrEqualTo(value: any, base?: number): Decimal;
+  public lte(value: any, base?: number): Decimal;
+
+  public logarithm(base?: any): Decimal;
+  public log(base?: any): Decimal;
+
+  public minus(value: any, base?: number): Decimal;
+
+  public modulo(value: any, base?: number): Decimal;
+  public mod(value: any, base?: number): Decimal;
+
+  public naturalLogarithm(): Decimal;
+  public ln(): Decimal;
+
+  public negated(): Decimal;
+  public neg(): Decimal;
+
+  public plus(value: any, base?: number): Decimal;
+
+  public precision(incZero?: boolean): number;
+  public sd(incZero?: boolean): number;
+
+  public round(): Decimal;
+
+  public squareRoot(): Decimal;
+  public sqrt(): Decimal;
+
+  public times(value: any, base?: number): Decimal;
+
+  public toDecimalPlaces(dp?: number, rm?: number): Decimal;
+  public toDP(dp?: number, rm?: number): Decimal;
+
+  public toExponential(dp?: number, rm?: number): string;
+
+  public toFixed(dp?: number, rm?: number): string;
+
+  public toFormat(dp?: number, rm?: number): string;
+
+  public toFraction(max_denomiator: any): string[];
+
+  public toJSON(): string;
+
+  public toNearest(value: any, rm?: number): Decimal;
+
+  public toNumber(): number;
+
+  public toPower(value: any, base?: number): Decimal;
+  public pow(value: any, base?: number): Decimal;
+
+  public toPrecision(sd?: number, rm?: number): string;
+  public toSignificantDigits(sd?: number, rm?: number): Decimal;
+
+  public toString(base?: number): string;
+
+  public truncated(): Decimal;
+  public trunc(): Decimal;
+
+  public c: number[];
+  public e: number;
+  public s: number;
+
+
+}
+
+interface IDecimalConfig
+{
+  precision?: number;
+  rounding?: number;
+  toExpNeg?: number;
+  toExpPos?: number;
+  minE?: number;
+  maxE?: number;
+  errors?: boolean;
+  crypto?: boolean;
+  modulo?: number;
+  format?: IDecimalFormat;
+}
+
+interface IDecimalFormat
+{
+
+  decimalSeparator?: string;
+  groupSeparator?: string;
+  groupSize?: number;
+  secondaryGroupSize?: number;
+  fractionGroupSeparator?: string;
+  fractionGroupSize?: number;
+}
